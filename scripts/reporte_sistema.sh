@@ -26,8 +26,11 @@ free -h | awk '/Mem:/ {print $7}'
 
 
 echo ""
-echo "NUMERO DE USUARIOS CONTENEDORES DOCKER ACTIVOS:"
+echo "NUMERO DE CONTENEDORES DOCKER ACTIVOS:"
 docker ps -q | wc -l
+echo ""
+echo "ESTADO DEL SERVICIO DOCKER:"
+systemctl is-active docker
 
 echo "-------------------------------------------------------------"
 
